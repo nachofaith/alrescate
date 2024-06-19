@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import Services from "../components/Services.astro";
 import Why from "../components/Why.astro";
+import Testi from "../components/Testi.astro";
 ---
 
 <Layout title="Bienvenido al Rescate.">
@@ -14,17 +15,25 @@ import Why from "../components/Why.astro";
         content="Nosotros rescatamos el valor de los residuos que reciclamos"
         image="./src/img/alrescate1.png"
 		button="Contactenos"
+    url="mailto:ivo@alrescate.cl"
       />
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
       <Section
         title="Economía Circular"
         contentFeat="Esto implica"
         content="compartir, arrendar, reutilizar, reparar, renovar, reciclar los materiales y productos existentes durante el mayor tiempo posible. Tiene como objetivo abordar desafíos globales como el cambio climático, la pérdida de biodiversidad, la gestión de los desechos y la contaminación."
         image="https://alrescate.cl/wp-content/uploads/2022/09/que-es-la-economia-circular-1024x1024.jpg"
 		button="Saber Mas"
+    url="https://economiacircular.mma.gob.cl/"
 		/>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
 		<Services />
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 		<Why />
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+    <Testi />
     </div>
   </div>
 </Layout>

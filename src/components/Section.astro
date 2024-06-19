@@ -1,24 +1,28 @@
 ---
 import H1 from "./H1.astro";
 
-const { title, contentFeat, content, image, button } = Astro.props;
+const { title, contentFeat, content, image, button, url } = Astro.props;
 ---
 
 <section>
   <!-- <section class="bg-white dark:bg-gray-900"> -->
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-<H1 title={title} />
+    <H1 title={title} />
     <p
       class="mb-8 text-lg font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
     >
-      <span class="underline underline-offset-3 decoration-8 decoration-lime-400 dark:decoration-blue-600">{contentFeat}</span>
+      <span
+        class="underline underline-offset-3 decoration-8 decoration-lime-400 dark:decoration-blue-600"
+        >{contentFeat}</span
+      >
       {content}
     </p>
     <div
       class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
     >
       <a
-        href="#"
+        href={url}
+        target="_blank"
         class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100 dark:focus:ring-primary-900"
       >
         {button}

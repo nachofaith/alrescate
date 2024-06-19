@@ -1,29 +1,24 @@
 ---
-const { image, title, desc } = Astro.props;
+import Sub from "./Sub.astro";
+
+const { image, title, desc, url } = Astro.props;
 ---
 
-
-
 <div class="container mx-auto p-6">
-  <div class="flex items-stretch -mx-4">
-    <div class="flex-1 p-4">
-      <div class="block bg-white overflow-hidden h-full text-center ">
-        <div class="p-4">
-          <a href="#">
-            <img class="rounded-t-lg" src={image} alt="" />
-          </a>
+  <a href={url} target="_blank">
+    <div class="flex items-stretch -mx-4 pb-12">
+      <div class="flex-1 p-4">
+        <div class="block overflow-hidden h-full text-center">
+          <div class="flex flex-col gap-8">
+            <a href="#">
+              <img class="rounded-t-lg" src={image} alt="" />
+            </a>
+            <Sub title={title} />
 
-          <h2 class="font-extrabold text-4xl box-decoration-slice px-2">
-            {title}
-          </h2>
-     
-
-
-          <p class="text-md">{desc}</p>
+            <p class="text-md">{desc}</p>
+          </div>
         </div>
-
       </div>
     </div>
-
-  </div>
+  </a>
 </div>

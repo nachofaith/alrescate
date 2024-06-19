@@ -2,13 +2,10 @@
 const { title, desc, image } = Astro.props;
 
 import { Icon } from "astro-icon/components";
-
-
-
 ---
 
 <figure
-  class="flex flex-col items-center justify-center p-4 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+  class="flex flex-col items-center justify-center p-4 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100" 
 >
   <Icon
     name={image}
