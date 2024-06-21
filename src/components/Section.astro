@@ -1,8 +1,12 @@
 ---
 import H1 from "./H1.astro";
-
+import { Image } from "astro:assets";
 
 const { title, contentFeat, content, imagePath, button, url } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <section>
@@ -43,7 +47,7 @@ const { title, contentFeat, content, imagePath, button, url } = Astro.props;
       class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
     >
       <div>
-        <img class="flex mx-auto" src={imagePath} alt="" />
+        <Image class="flex mx-auto rounded-lg" src={images[imagePath]()} alt="" />
       </div>
     </div>
   </div>
