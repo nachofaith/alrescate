@@ -1,7 +1,8 @@
 ---
 import H1 from "./H1.astro";
+import { Image } from "astro:assets";
 
-const { title, contentFeat, content, image, button, url } = Astro.props;
+const { title, contentFeat, content, imagePath, button, url } = Astro.props;
 ---
 
 <section>
@@ -42,7 +43,7 @@ const { title, contentFeat, content, image, button, url } = Astro.props;
       class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
     >
       <div>
-        <img class="rounded-md shadow-xl" src={image} alt="" />
+        <img class="flex mx-auto" src={imagePath} alt="" />
       </div>
     </div>
   </div>
