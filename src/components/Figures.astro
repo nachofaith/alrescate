@@ -10,13 +10,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 ---
 
 <figure
-  class="flex flex-col items-center justify-center p-4 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100"
+  class="flex flex-col items-center justify-center p-4 text-center border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e  hover:bg-gray-100"
 >
   {
     tipo === "ico" ? (
       <Icon
         name={image}
-        class="w-[150px] h-[150px] text-gray-800 dark:text-white flex"
+        class="w-[150px] h-[150px] text-gray-800 flex"
       />
     ) : (
       <Image
@@ -28,9 +28,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   }
 
   <blockquote
-    class="flex flex-col align-middle items-center max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+    class="flex flex-col align-middle items-center max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8"
   >
-    <h3 class="text-4xl font-semibold text-gray-900 dark:text-white">
+    <h3 class="text-4xl font-semibold text-gray-900">
       {title}
     </h3>
     <p class="my-4 text-lg">

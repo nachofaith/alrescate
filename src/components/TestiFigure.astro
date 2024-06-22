@@ -5,10 +5,10 @@ const { title, desc, image, name } = Astro.props;
 ---
 
 <div
-  class="flex flex-col gap-10 text-center py-12 bg-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+  class="flex flex-col gap-10 text-center py-12"
 >
   <h5
-    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
   >
     <Sub title={title} />
   </h5>
@@ -30,7 +30,7 @@ const { title, desc, image, name } = Astro.props;
     class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
   >
     <blockquote
-      class="flex px-10 text-xl italic font-normal text-gray-900 dark:text-white"
+      class="flex px-10 text-xl italic font-normal text-gray-900"
     >
       <p>{desc}</p>
     </blockquote>
