@@ -6,16 +6,16 @@ import TestiFigure from "./TestiFigure.astro";
 const { id } = Astro.props;
 ---
 
-<div id=`#${id}` class="py-20 sm:container sm:mx-auto">
+<div id=`#${id}` class="py-20 md:container md:mx-auto">
 <H1 title="Testimonio de Clientes"/>
 
-<div class="flex flex-row md:mb-12 md:grid-cols-2">
+<div class="lg:columns-3 md:columns-1 sm:columns-3xs">
 
 
  <TestiFigure
  title="Trabajo notable"
  desc="Han hecho un trabajo notable rescatando productos de gran calidad ofreciéndolos a precios rebajados, en especial artículos de construcción que han subido mucho en el último tiempo."
- image="https://alrescate.cl/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-29-at-23.55.55-2.jpeg"
+ image="/src/assets/testi1.jpeg"
  name="Marcelo Godoy"
  />   
 
@@ -24,7 +24,7 @@ const { id } = Astro.props;
  <TestiFigure
  title="Lo que necesitaba!"
  desc="Estoy formalizando mi empresa, arrendé una pequeña oficina que necesitaba amoblar, vi sus productos y era justo lo que necesitaba, productos resistentes, de buena calidad a buen precio."
- image="https://alrescate.cl/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-29-at-23.55.55-1.jpeg"
+ image="/src/assets/testi2.jpeg"
  name="Carlos Flores"
  />  
 
@@ -33,7 +33,7 @@ const { id } = Astro.props;
  <TestiFigure
  title="La basura de unos es el tesoro de otros"
  desc="La basura de unos es el tesoro de otros...Rescatan la historia de esos tesoros y eso tiene un valor agregado que muchos apreciamos."
- image="https://alrescate.cl/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-29-at-23.55.55.jpeg"
+ image="/src/assets/testi3.jpeg"
  name="Ma. Cristina Contreras"
  />  
 
