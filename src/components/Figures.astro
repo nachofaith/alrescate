@@ -1,16 +1,31 @@
 ---
-const { title, desc, image } = Astro.props;
-
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+
+const { title, desc, image, tipo } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <figure
-  class="flex flex-col items-center justify-center p-4 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100" 
+  class="flex flex-col items-center justify-center p-4 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100"
 >
-  <Icon
-    name={image}
-    class="w-[150px] h-[150px] text-gray-800 dark:text-white flex"
-  />
+  {
+    tipo === "ico" ? (
+      <Icon
+        name={image}
+        class="w-[150px] h-[150px] text-gray-800 dark:text-white flex"
+      />
+    ) : (
+      <Image
+        class="w-[150px] h-[150px] flex mx-auto rounded-lg"
+        src={images[image]()}
+        alt=""
+      />
+    )
+  }
 
   <blockquote
     class="flex flex-col align-middle items-center max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"

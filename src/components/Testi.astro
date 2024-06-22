@@ -3,9 +3,10 @@ import H1 from "./H1.astro";
 import TestiFigure from "./TestiFigure.astro";
 
 
+const { id } = Astro.props;
 ---
 
-<div class="sm:container sm:mx-auto">
+<div id=`#${id}` class="sm:container sm:mx-auto">
 <H1 title="Testimonio de Clientes"/>
 
 <div class="flex flex-row md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
@@ -30,7 +31,7 @@ import TestiFigure from "./TestiFigure.astro";
  
 
  <TestiFigure
- title="La basura de unos es el tesoro"
+ title="La basura de unos es el tesoro de otros"
  desc="La basura de unos es el tesoro de otros...Rescatan la historia de esos tesoros y eso tiene un valor agregado que muchos apreciamos."
  image="https://alrescate.cl/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-29-at-23.55.55.jpeg"
  name="Ma. Cristina Contreras"

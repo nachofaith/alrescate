@@ -1,9 +1,11 @@
 ---
 import Figures from "./Figures.astro";
 import H1 from "./H1.astro";
+
+const { id } = Astro.props;
 ---
 
-<div class="md:container md:mx-auto">
+<div id=`#${id}` class="md:container md:mx-auto">
   <H1 title="Por qué elegirnos?" />
 
   <div
@@ -13,21 +15,25 @@ import H1 from "./H1.astro";
       title="Entregamos Valor"
       desc="Responsabilidad Social Empresarial"
       image="1"
+      tipo="ico"
     />
     <Figures
       title="Comercio Justo"
       desc="Relación comercial voluntaria justa entre productores y consumidores"
       image="2"
+      tipo="ico"
     />
     <Figures
       title="Empresa B"
       desc="Estándares de desempeño social y ambiental"
       image="3"
+      tipo="ico"
     />
     <Figures
       title="Inclusión"
       desc="Todos aportamos de la misma forma"
       image="4"
+      tipo="ico"
     />
   </div>
 </div>

@@ -1,36 +1,39 @@
 ---
-import Card from "./Card.astro";
+import Figures from "./Figures.astro";
 import H1 from "./H1.astro";
+
+const { id } = Astro.props;
 ---
 
-<div>
- 
-  <H1 title="Nuestros Servicios" />
-  <div class="md:container md:mx-auto flex gap-4">
+<div id=`#${id}` class="md:container md:mx-auto">
+  <H1 title="Nuestros servicios" />
 
-
-    <Card 
-    image="https://alrescate.cl/wp-content/uploads/2022/09/icono-reciclaje-simbolo-reutilizacion-reduccion-basura-aumento-reciclaje-redisenado-colores-verdes-utiles-infografias-etiquetas-aislado-sobre-fondo-blanco-vector_517145-580.jpg"
-    title="Reutilización"
-    desc="Retiro – Transporte – Reparación y/o Reutilización -Revalorización."
+  <div
+    class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 "
+  >
+    <Figures
+      title="Reutilización"
+      desc="Retiro – Transporte – Reparación y/o Reutilización -Revalorización."
+      image="/src/assets/reutilizacion.png"
+      tipo="img"
     />
-
-    <Card 
-    image="https://alrescate.cl/wp-content/uploads/2022/09/hand-shaking-GettyImages-978897892-1.jpg"
-    title="Compra Venta"
-    desc="Compra y venta de residuos no peligros reciclables, reutilizables o reparables."
+    <Figures
+      title="Compra Venta"
+      desc="Relación comercial voluntaria justa entre productores y consumidores"
+      image="/src/assets/compraventa.png"
+      tipo="img"
     />
-
-    <Card 
-    image="https://alrescate.cl/wp-content/uploads/2022/09/unnamed.png"
-    title="Puntos Verdes"
-    desc="Instalación de puntos verdes de reciclaje en sitios públicos y/o privados."
+    <Figures
+      title="Puntos Verdes"
+      desc="Instalación de puntos verdes de reciclaje en sitios públicos y/o privados."
+      image="/src/assets/puntoverde.png"
+      tipo="img"
     />
-
-    <Card 
-    image="https://alrescate.cl/wp-content/uploads/2022/09/Cirila-%D0%9C-majuskla.svg.png"
-    title="Marketing De Reciclaje"
-    desc="Venta de Contenedores con publicidad en puntos con generación masiva de residuos con alta exposición de marca."
+    <Figures
+      title="Marketing De Reciclaje"
+      desc="Venta de Contenedores con publicidad en puntos con generación masiva de residuos con alta exposición de marca."
+      image="/src/assets/marketing.png"
+      tipo="img"
     />
-    
+  </div>
 </div>

@@ -4,36 +4,42 @@ import Section from "../components/Section.astro";
 import Services from "../components/Services.astro";
 import Why from "../components/Why.astro";
 import Testi from "../components/Testi.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Bienvenido al Rescate.">
   <div>
     <div class="container mx-auto">
+      <Header />
 
       <Section
+        id="supra"
         title="Suprarreciclaje la nueva forma de reciclar"
         contentFeat="¿Te ofrecen buenos precios?"
         content="Nosotros rescatamos el valor de los residuos que reciclamos"
         imagePath="/src/assets/alrescate1.png"
-		button="Contactenos"
-    url="mailto:ivo@alrescate.cl"
+        button="Contactenos"
+        url="mailto:ivo@alrescate.cl"
       />
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
       <Section
+        id="economia"
         title="Economía Circular"
         contentFeat="Esto implica"
         content="compartir, arrendar, reutilizar, reparar, renovar, reciclar los materiales y productos existentes durante el mayor tiempo posible. Tiene como objetivo abordar desafíos globales como el cambio climático, la pérdida de biodiversidad, la gestión de los desechos y la contaminación."
         imagePath="/src/assets/alrescate2.jpg"
-		button="Saber Mas"
-    url="https://economiacircular.mma.gob.cl/"
-		/>
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-		<Services />
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-		<Why />
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-    <Testi />
+        button="Saber Mas"
+        url="https://economiacircular.mma.gob.cl/"
+      />
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <Services
+      id="services"
+      />
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <Why id="why"/>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <Testi id="testimonio" />
     </div>
   </div>
 </Layout>

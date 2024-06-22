@@ -2,53 +2,60 @@
 import H1 from "./H1.astro";
 import { Image } from "astro:assets";
 
-const { title, contentFeat, content, imagePath, button, url } = Astro.props;
+const { id, title, contentFeat, content, imagePath, button, url } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
 );
+
+// const menu = `#${id}`
+
 ---
 
-<section>
-  <!-- <section class="bg-white dark:bg-gray-900"> -->
-  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-    <H1 title={title} />
-    <p
-      class="mb-8 text-lg font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
-    >
-      <span
-        class="underline underline-offset-3 decoration-8 decoration-lime-400 dark:decoration-blue-600"
-        >{contentFeat}</span
+<div id=`#${id}`>
+  <section>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+      <H1 title={title} />
+      <p
+        class="mb-8 text-lg font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
       >
-      {content}
-    </p>
-    <div
-      class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
-    >
-      <a
-        href={url}
-        target="_blank"
-        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100 dark:focus:ring-primary-900"
-      >
-        {button}
-        <svg
-          class="ml-2 -mr-1 w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            clip-rule="evenodd"></path></svg
+        <span
+          class="underline underline-offset-3 decoration-8 decoration-lime-400 dark:decoration-blue-600"
+          >{contentFeat}</span
         >
-      </a>
-    </div>
-    <div
-      class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
-    >
-      <div>
-        <Image class="flex mx-auto rounded-lg" src={images[imagePath]()} alt="" />
+        {content}
+      </p>
+      <div
+        class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+      >
+        <a
+          href={url}
+          target="_blank"
+          class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100 dark:focus:ring-primary-900"
+        >
+          {button}
+          <svg
+            class="ml-2 -mr-1 w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path></svg
+          >
+        </a>
+      </div>
+      <div
+        class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
+      >
+        <div>
+          <Image class="flex mx-auto rounded-lg" src={images[imagePath]()} alt="" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>
+
+
