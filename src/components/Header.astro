@@ -2,7 +2,12 @@
 import Link from "./Link.astro";
 
 import { Image } from "astro:assets";
-import logo from "../assets/logo2.jpg";
+
+const logo = "/src/assets/logo2.jpg"
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
+
 ---
 
 <nav class="bg-white sticky top-0">
@@ -10,7 +15,12 @@ import logo from "../assets/logo2.jpg";
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
     <a href="" class="flex flex-row items-center rtl:space-x-reverse">
-      <Image class="px-4 w-20" src={logo} alt="Al rescate" />
+
+      <Image
+      class="px-4 w-20" 
+      src={images[logo]()}
+      alt=""
+    />
       <span
         class="self-center text-4xl font-bold whitespace-nowrap text-gray-600"
         >AL</span
