@@ -1,0 +1,33 @@
+---
+const { text, modalTarget, modalToggle, modalHide, type, variant, icon } =
+  Astro.props;
+import { Icon } from "astro-icon/components";
+
+let variante;
+
+if (variant) {
+  if (variant === "close") {
+    variante =
+      "flex flex-row gap-2 justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-red-500 hover:bg-red-600 focus:ring-4 focus:ring-red-100";
+  } else {
+    variante =
+      "flex flex-row gap-2 justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100";
+  }
+} else {
+  variante =
+    "flex flex-row gap-2 justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100";
+}
+---
+
+<button
+  data-modal-target={modalTarget}
+  data-modal-toggle={modalToggle}
+  data-modal-hide={modalHide}
+  class={variante}
+  type={type}
+>
+  {text}{icon ? <Icon name={icon} /> : ""}
+</button>
+
+
+

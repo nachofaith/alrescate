@@ -1,10 +1,19 @@
 ---
-import H1 from "./H1.astro";
+import H1 from "./style/H1.astro";
 import { Image } from "astro:assets";
-import Modal from "./Modal.astro";
+import Modal from "./form/Modal.astro";
+import Button from "./style/Button.astro";
 
-const { title, contentFeat, content, imagePath, button, url, modal } =
-  Astro.props;
+const {
+  title,
+  contentFeat,
+  content,
+  imagePath,
+  button,
+  url,
+  modal,
+  modalName,
+} = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
@@ -26,66 +35,35 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     >
       {
         modal == "si" ? (
-          <button
-            data-modal-target="default-modal"
-            data-modal-toggle="default-modal"
-            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100 dark:focus:ring-primary-900"
-            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            type="button"
-          >
-            {button}
-            <svg
-              class="ml-2 -mr-1 w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+          <>
+            <div class="text-center">
+              <Button
+                text={button}
+                modalTarget={modalName}
+                modalToggle={modalName}
+                type="submit"
+                icon="arrow"
               />
-            </svg>
-          </button>
+            </div>
+            <Modal name="contact" />
+          </>
         ) : (
-          <a
-            href={url}
-            target="_blank"
-            type="button"
-            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-lime-500 hover:bg-lime-600 focus:ring-4 focus:ring-lime-100 dark:focus:ring-primary-900"
-          >
-            {button}
-            <svg
-              class="ml-2 -mr-1 w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <a target="_blank" href={url}>
+            <Button text={button} icon="arrow" />
           </a>
         )
       }
-      </div>
-      <div
-        class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
-      >
-        <div>
-          <Image
-            class="flex mx-auto rounded-lg"
-            src={images[imagePath]()}
-            alt=""
-          />
-        </div>
+    </div>
+    <div
+      class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36"
+    >
+      <div>
+        <Image
+          class="flex mx-auto rounded-lg"
+          src={images[imagePath]()}
+          alt=""
+        />
       </div>
     </div>
   </div>
-
-
-  <Modal />
-
 </section>

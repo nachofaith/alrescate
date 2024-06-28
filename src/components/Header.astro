@@ -1,5 +1,5 @@
 ---
-import Link from "./Link.astro";
+import Link from "./style/Link.astro";
 
 import { Image } from "astro:assets";
 
@@ -12,9 +12,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <nav class="bg-white sticky top-0">
   <div
-    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto"
   >
-    <a href="" class="flex flex-row items-center rtl:space-x-reverse">
+
+
+
+
+    <a href="" class="flex flex-row items-center text-4xl sm:text-xl md:text-2xl rtl:space-x-reverse mx-auto p-4 md:p-8 sm:p-4">
 
       <Image
       class="px-4 w-20" 
@@ -22,18 +26,18 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       alt=""
     />
       <span
-        class="self-center text-4xl font-bold whitespace-nowrap text-gray-600"
+        class="self-center font-bold whitespace-nowrap text-gray-600"
         >AL</span
       >
       <span
-        class="self-center text-4xl font-light whitespace-nowrap text-lime-500"
+        class="self-center font-light whitespace-nowrap text-lime-500"
         >RESCATE</span
       >
     </a>
 
-    <div class="w-full md:block md:w-auto">
+    <div class="w-full md:block md:w-auto mx-auto">
       <ul
-        class="uppercase font-normal flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white"
+        class=" text-center uppercase font-normal flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white"
       >
         <Link href="#supra" name="Suprarreciclaje" />
         <Link href="#economia" name="Economía Circular" />
