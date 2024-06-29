@@ -1,25 +1,9 @@
 ---
-import Button from "../style/Button.astro";
-import Success from "./Success.astro";
+import Send from "./Send.astro";
+import Button from "./style/Button.astro";
 
 const { name } = Astro.props;
-
-let estado;
-
-if (Astro.request.method === "POST") {
-  try {
-    estado = "OK";
-  } catch (error) {
-    if (error instanceof Error) {
-      alert(error.message);
-    }
-  }
-}
 ---
-
-{estado && <script>alert("Su mensaje a sido enviado")</script>}
-
-<Success />
 
 <div
   id={name}
@@ -72,6 +56,7 @@ if (Astro.request.method === "POST") {
             <input
               type="email"
               id="email"
+              name="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="tucorreo@pagina.com"
               required
@@ -107,7 +92,7 @@ if (Astro.request.method === "POST") {
           <div
             class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b gap-4"
           >
-            <Button text="Enviar" icon="arrow" />
+            <Button id="enviar" text="Enviar" icon="arrow" />
             <Button
               text="Cerrar"
               modalHide={name}
@@ -121,3 +106,7 @@ if (Astro.request.method === "POST") {
     </div>
   </div>
 </div>
+
+<Send />
+
+
